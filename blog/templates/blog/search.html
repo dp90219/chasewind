@@ -1,0 +1,16 @@
+{% extends 'blog/index_base.html' %}
+{% block main  %}
+<div class="container-fluid">
+  {% if result_list %}
+  <ol>
+    {% for result in result_list %}
+    <li>
+    <button data-title="{{ result.title }}" data-url="{{ result.link }}" data-summary="{{ result.summary }}" class="post-add btn btn-xs btn-info" type="button">Add</button>
+    <strong><a href="{{ result.link }}", target="_blank">{{ result.title }}</a></strong>
+    <p>{{ result.summary }}</p>
+    </li>
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% endblock %}

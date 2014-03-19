@@ -1,0 +1,12 @@
+{% extends 'blog/blog_base.html' %}
+{% block posts %}
+{% for post in posts %}
+  <div class="blog-post">
+    <h2 class="blog-post-title"><a href="/blog/goto/?post_id={{ post.id }}" target="_blank">{{ post.title }}</a></h2>
+    <p>{{ post.views }} views</p>
+    <p class="blog-post-meta">{{ post.publish_time }} by {{ post.author }}</p>
+    <p class="blog-post-content">{% if post.summary %}{{ post.summary }}{% else %}No summary now.{% endif %}</p>
+    
+  </div>
+{% endfor %}
+{% endblock %}

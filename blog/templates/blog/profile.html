@@ -1,0 +1,8 @@
+{% extends 'blog/index_base.html' %}
+{% block main %}
+<p>username: {{ user.username }}</p>
+<p>email: {{ user.email }}</p>
+<p>last visit time: {{ last_visit }}</p>
+<p>You have visited {{ visits }} times</p> 
+{% endblock %}
+
